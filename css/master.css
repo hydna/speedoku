@@ -1,0 +1,298 @@
+
+body {
+  background: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.template {
+  display: none;
+}
+
+.dialog {
+  position: absolute;
+
+  left: 50%;
+  width: 450px;
+  margin-left: -225px;
+  
+  padding: 20px;
+
+  background: grey;
+}
+
+button {
+  position: relative;
+
+  left: 50%;
+  width: 120px;
+  margin-left: -60px;
+}
+
+.dialog ul {
+  margin-bottom: 20px;
+}
+
+.dialog h2 {
+
+  text-align: center;
+}
+
+.dialog p {
+  font-size: 0.8em;
+}
+
+
+.dialog a.close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.dialog.create-game li {
+  display: inline-block;
+  margin-right: 24px;
+}
+
+.dialog.create-game form {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #666666;
+}
+
+.dialog.create-game .player-list {
+
+  background: #aaaaaa;
+
+  height: 0px;
+  overflow: auto;
+
+  -webkit-transition-property: height;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+
+}
+
+.dialog.create-game .player-details {
+  background: #888888;
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+}
+
+.dialog.create-game .player-details img {
+  position: absolute;
+  text-algin: text-top;
+  width: 40px;
+  height: 40px;
+}
+
+.dialog.create-game .player-details h3 {
+  position: relative;
+  left: 50px;
+}
+
+.dialog.create-game button:after {
+  content: "Create Game";
+}
+
+.dialog.create-game.listening button:after {
+  content: "Start Game";
+}
+
+.dialog.create-game.listening .player-list {
+  height: 200px;
+}
+
+
+.dialog.about {
+  position: absolute;
+
+  z-index: 100;
+
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+
+  background: grey;
+
+  padding: 20px;
+}
+
+.dialog.about h1 {
+  text-align: center;
+}
+
+.dialog.main-menu {
+  position: absolute;
+
+  left: 50%;
+  width: 300px;
+  height: 450px;
+  margin-left: -150px;
+
+  text-align: center;
+
+  background: #dddddd;
+}
+
+.dialog.main-menu ul {
+  list-style: none;
+  margin: 40px 0 0 0;
+  padding: 0;
+}
+
+.dialog.main-menu ul li {
+  margin: 10px;
+  padding: 20px;
+  background: #c0c0c0;
+  font-size: 2.0em;
+}
+
+.dialog.main-menu ul li:hover {
+  background: #cccccc;
+}
+
+.dialog.main-menu ul li a {
+  text-decoration: none;
+}
+
+.dialog.main-menu a.about {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+.board {
+  position: relative;
+  width: 458px;
+  height: 458px;
+  padding: 0;
+  margin: 0;
+
+  border: 2px solid black;
+
+  overflow: hidden;
+}
+
+.group {
+  position: relative;
+  display: inline-block;
+
+  width: 150px;
+  height: 150px;
+
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.group:nth-child(3n+3) {
+  border-right: none;
+}
+
+.group:nth-child(7),
+.group:nth-child(8),
+.group:nth-child(9) {
+  border-bottom: none;
+}
+
+.cell {
+  position: relative;
+  display: inline-block;
+
+  width: 40px;
+  height: 40px;
+  
+  margin: 5px 0 0 5px;
+
+  border: none;
+/*  border: 1px #cccccc solid;*/
+
+  font-size: 1.4em;
+  text-align: center;
+  text-indent: -10000px;
+
+  background: #eeeeee;
+  background-image: url(../images/numbers.png);
+  background-repeat: no-repeat;
+  background-position: left 40px;
+
+  -webkit-transition-property: background-position, background-color;
+  -webkit-transition-duration: 0.8s, 0.3s;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out;
+
+/*  -webkit-transition: background-position,  0.8s ease-in-out;
+  -moz-transition: background-position, background-color 0.8s ease-in-out;
+  -o-transition: background-position, background-color 0.8s ease-in-out;
+*/
+}
+
+.board .cell.row-0 {
+/*  margin-top: 5px;*/
+}
+
+.cell.solved {
+  background-color: #bbbbbb;
+}
+
+.cell.invalid-value {
+  background-color: red;
+}
+
+.cell[data-no="0"] {
+  background-position: left 0px;
+}
+
+.cell[data-no="1"] {
+  background-position: left -40px;
+}
+
+.cell[data-no="2"] {
+  background-position: left -80px;
+}
+
+.cell[data-no="3"] {
+  background-position: left -120px;
+}
+
+.cell[data-no="4"] {
+  background-position: left -160px;
+}
+
+.cell[data-no="5"] {
+  background-position: left -200px;
+}
+
+.cell[data-no="6"] {
+  background-position: left -240px;
+}
+
+.cell[data-no="7"] {
+  background-position: left -280px;
+}
+
+.cell[data-no="8"] {
+  background-position: left -320px;
+}
+
+.cell[data-no="9"] {
+  background-position: left -360px;
+}
+
+#cell-select-pane {
+  position: absolute;
+  border: none;
+  padding: 10px;
+}
+
+#cell-select-pane .cell {
+  background-color: #dddddd;
+}
+
+#cell-select-pane .cell:hover {
+  background-color: red;
+}

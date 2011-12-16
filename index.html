@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speedoku</title>
+    <link rel="stylesheet" href="./css/master.css" type="text/css" media="screen">
+    <script type="text/javascript" src="http://cdn.hydna.com/1/hydna.js"></script>
+    <script type="text/javascript" src="./bootloader.js"></script>
+    <script type="text/javascript" src="./deps/classlist.js"></script>
+    <script type="text/javascript" src="./deps/localstorage.js"></script>
+    <script type="text/javascript" src="./deps/md5.js"></script>
+    <script type="text/javascript">
+      speeduko.bootloader.init({
+        scripts: [
+          "src/utils.js",
+          "src/settings.js",
+          "src/backend.js",
+          "src/dialogs.js",
+          "src/board.js",
+          "src/main.js"
+        ]
+      });
+    </script>
+  </head>
+  <body>
+
+    <section class="dialog about template">
+      <h1>Speeduko</h1>
+      <p>Speeduko is a fast-phase multiplayer Suduko game with focus on
+         completing the puzzle before your opponents do.</p>
+      <p>Powered by --hydna-gaming--</p>
+      <p>Copyright (c) 2011 Johan Dahlberg</p>
+      <a class="close" href="#">close</a>
+    </section>
+
+    <section class="dialog settings template">
+      <h1>Settings</h1>
+      <p>Please enter your nickname. If you want a picture, please enter
+        your email address as well. The email adresses is not sent anywhere,
+        it is used to fetch your Gravatar profile picture.</p>
+      <form>
+        <img src="http://www.gravatar.com/avatar/?s=128">
+        <ul>
+          <li><label for="nickname">Nickname</label><input name="nickname"></li>
+          <li><label for="email">Email<input name="email"></li>
+        </ul>
+      </form>
+      <a class="close" href="#">close</a>
+    </section>
+
+    <section class="dialog main-menu template">
+      <h1>Speeduko</h1>
+      <ul>
+        <li class="create"><a href="#">Create Game</a></li>
+        <li class="find"><a href="#">Find Game</a></li>
+        <li class="settings"><a href="#">Settings</a></li>
+      </ul>
+      <a class="about" href="#">about</a>
+    </section>
+
+    <section class="dialog create-game template">
+      <h2>Create game</h2>
+      <form>
+        <p>Name your game an select maximum number of players. Then press the button. Players will appear in list below when joining.</p>
+        <ul>
+          <li><label for="name">Game name</label><input name="name"></li>
+          <li><label for="players">Players<select name="players"></select></li>
+        </ul>
+        <ul class="player-list">
+        </ul>
+        <button></button>
+      </form>
+      <a class="close" href="#">close</a>
+    </section>
+
+    <section id="game-list" class="dialog game-list template">
+      <a class="close" href="#">close</a>
+      <h2>Join Game</h2>
+      <p>Click on the game that you want to join.</p>
+      <ul class="game-list">
+      </ul>
+      <button>Lol!</button>
+    </section>
+
+    <li class="game-details template">
+      <img src="about:blank">
+      <h3></h3>
+    </li>
+
+    <li class="player-details template">
+      <img src="about:blank">
+      <h3></h3>
+    </li>
+
+  </body>
+</html>
